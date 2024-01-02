@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for i in range(ord('a'), ord('z') + 1):
-    print(chr(i), end='')
-#ord() -gets the unicode of a character in ASCII
-#chr() -converts the unicode back to characters
+#chr() converts character from ASCII unicode e.g 97 to 'a'
+for letter in range(97, 123):
+    print("{}".format(chr(letter)), end="")
