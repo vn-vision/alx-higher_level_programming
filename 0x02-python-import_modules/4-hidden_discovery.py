@@ -11,7 +11,7 @@ def hd_list():
     List.sort()
 
     while (i < n):
-        if ((List[i])[ : 2] != "__"):
+        if ((List[i])[: 2] != "__"):
             N_List.append(List[i])
         i += 1
 
@@ -21,6 +21,7 @@ def hd_list():
     while j < n_list_len:
         print(N_List[j])
         j += 1
+
 
 if __name__ == "__main__":
     hd_list()
