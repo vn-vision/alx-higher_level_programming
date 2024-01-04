@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
-from add_0 import add
+if __name__ == "__main__":
 
-a = 1
-b = 2
-result = add(a, b)
+    from add_0 import add
 
-print(f"{a:d} + {b:d} = {result:d}")
+    a = 1
+    b = 2
+    result = add(a, b)
+
+    print(f"{a:d} + {b:d} = {result:d}")
