@@ -21,7 +21,6 @@ int is_palindrome(listint_t **head)
 	listint_t *fast, *slow, *temp, *second_half;
 
 	temp = malloc(sizeof(listint_t));
-	
 	if (temp == NULL)
 		return (0);
 
@@ -50,7 +49,6 @@ int is_palindrome(listint_t **head)
 		second_half = slow;
 		slow = temp;
 	}
-
 	while (*head != NULL && second_half != NULL)
 	{
 		if ((*head)->n != second_half->n)
@@ -59,6 +57,5 @@ int is_palindrome(listint_t **head)
 		*head = (*head)->next;
 		second_half = second_half->next;
 	}
-
 	return (1);
 }
