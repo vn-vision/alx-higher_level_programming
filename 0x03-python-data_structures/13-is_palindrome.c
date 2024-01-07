@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,13 +20,17 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *fast, *slow, *temp, *second_half;
 
+	temp = malloc(sizeof(listint_t));
+	
+	if (temp == NULL)
+		return (0);
+
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
 	fast = *head;
 	slow = *head;
-	second_half == NULL;
-	temp = NULL;
+	second_half = NULL;
 
 	while (fast != NULL && fast->next != NULL)
 	{
