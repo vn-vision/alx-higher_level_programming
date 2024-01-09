@@ -12,12 +12,12 @@ void print_python_list_info(PyObject *p);
 
 void print_python_list_info(PyObject *p)
 {
-	int i;
 	char *p_Name;
-	long int p_Size;
-	Py_ssize_t p_Ind;
-	PyListObject p_Alloc;
-
+	Py_ssize_t p_Size, i;
+	PyObject *p_Ind;
+	PyListObject *p_Alloc;
+	PyTypeObject p_Type;
+	
 	p_Type = Py_Type(p);
 	p_Size = PyList_Size(p);
 	p_Alloc = ((PyListObject *)p)->allocated;
@@ -28,7 +28,7 @@ void print_python_list_info(PyObject *p)
 	i = 0;
 	while (i < p_Size)
 	{
-		p_Ind =  PyList_GetItem(p, i);
+		p_Ind =  PyList_GET_ITEM(p, i);
 
 		p_Name = Py_TYPE(p_Ind)->tp_name;
 
