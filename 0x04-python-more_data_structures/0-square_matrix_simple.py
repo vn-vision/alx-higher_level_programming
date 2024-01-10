@@ -5,6 +5,6 @@ def square_matrix_simple(matrix=[]):
     ana_list = []
 
     for x in nw_matrix:
-       ana_list.append(list( map(lambda i: i**2, x)))
+        ana_list.append(list(map(lambda i: i**2, x)))
 
     return ana_list
