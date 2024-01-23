@@ -3,9 +3,20 @@
 
 
 class Square:
+	""" class defines square properties
+	Attributes:
+		size: side of a square
+	"""
+	
 	def __init__(self, size=0):
-		
+		""" creates new instance for square
+
+		Args:
+			size: side of a square
+		"""
+
 		self.__size = size
+
 		if not isinstance(size, int):
 			raise TypeError("size must be an integer")
 		elif size < 0:
@@ -14,5 +25,10 @@ class Square:
 			self.__size = size
 
 	def area(self):
-		res = self.__size * self.__size
+		""" calculates the area of square
+
+		Returns: the area
+		"""
+
+		res = self.__size ** 2
 		return res
