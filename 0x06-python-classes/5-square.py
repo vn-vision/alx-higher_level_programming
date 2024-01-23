@@ -1,59 +1,58 @@
 #!/usr/bin/python3
-""" Defines a square based on 4-square.py,
-uses property to update and access private attributes
-"""
+"""Defines a class Square"""
 
 
 class Square:
-	"""
-	Class that defines properties of square by: (based on 4-square.py).
+    """
+    Class that defines properties of square by: (based on 4-square.py).
 
-	Attributes:
-	size: size of a square (1 side).
-	"""
-	def __init__(self, size=0):
-		"""Creates new instances of square.
+    Attributes:
+        size: size of a square (1 side).
+    """
+    def __init__(self, size=0):
+        """Creates new instances of square.
 
-		Args:
-		    size: size of the square (1 side).
-		"""
-		self.__size = size
+        Args:
+            size: size of the square (1 side).
+        """
+        self.__size = size
 
-	@property
-	def size(self):
-		""" Return the size """
-		return self.__size
+    def area(self):
+        """Calculates the area of square.
 
-	@size.setter
-	def size(self, value):
-		"""Property setter for size.
+        Returns: the current square area.
+        """
+        return self.__size ** 2
 
-		Args:
-		    value (int): size of a square (1 side).
+    @property
+    def size(self):
+        """Returns the size of a square
+        """
+        return self.__size
 
-		Raises:
-		    TypeError: size must be an integer
-		    ValueError: size must be >= 0
-		"""
-		if not isinstance(value, int):
-			raise TypeError("size must be an integer")
-		elif value < 0:
-			raise ValueError("size must be >= 0")
-		else:
-			self.__size = value
+    @size.setter
+    def size(self, value):
+        """Property setter for size.
 
-	def area(self):
-		"""Calculates the area of square.
+        Args:
+            value (int): size of a square (1 side).
 
-		Returns: the current square area.
-		"""
-		res = self.__size ** 2
-		return res
+        Raises:
+            TypeError: size must be an integer
+            ValueError: size must be >= 0
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
 
-	def my_print(self):
-	""" my_print function - prints the square in '#' """
-		if self.__size == 0:
-			print()
-		else:
-			for i in range(self.__size):
-				print('#' * self.__size)
+    def my_print(self):
+        """prints in stdout the square with the character #
+        """
+
+        if self.__size == 0:
+            print()
+        for i in range(self.__size):
+            print("#" * (self.__size))
