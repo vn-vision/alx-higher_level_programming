@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-
-""" defines a square based on 4-square.py,
-uses property to update and access private attributes """
+""" Defines a square based on 4-square.py,
+uses property to update and access private attributes
+"""
 
 
 class Square:
@@ -44,7 +44,8 @@ class Square:
 			raise TypeError("size must be an integer")
 		elif value < 0:
 			raise ValueError("size must be >= 0")
-		self.__size = value
+		else:
+			self.__size = value
 
 	def area(self):
 		"""Calculates the area of square.
