@@ -7,8 +7,7 @@ def is_same_class(obj, a_class):
     """ tells the instance of the object
     using conditional statement"""
 
-    if (isinstance(obj, a_class) == True):
+    if isinstance(obj, a_class):
         return True
     else:
         return False
-
