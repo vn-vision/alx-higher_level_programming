@@ -37,4 +37,28 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ string with the following description """
-        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+        return ("[{}] {}/{}".format(
+                self.__class__.__name__, self.__width, self.__height))
+
+
+class Square(Rectangle):
+    """
+    class Square that inherits from Rectangle
+    """
+    def __init__(self, size):
+        """ constructor, init square """
+        if self.integer_validator("size", size) is None:
+            self.__size = size
+
+        super().__init__(size, size)
+
+    def __str__(self):
+        """returns the string representation of the object. This method is
+        called when print() or str() function is invoked on an object."""
+
+        return "[Square] {}/{}".format(self.__size, self.__size)
+
+    def area(self):
+        """Calculates the area of a square"""
+
+        return self.__size * self.__size
