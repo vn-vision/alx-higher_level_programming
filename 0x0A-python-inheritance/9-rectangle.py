@@ -6,7 +6,13 @@ class BaseGeometry():
     """ public instance method that raises
     an exception """
 
+
+    def area(self):
+        """ raises exception"""
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
+        """ function to validate +ve int """
         self.name = name
 
         if not isinstance(value, int):
@@ -43,6 +49,6 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ return the print and string representations """
-        string = "[" + str(self.__class__.__name__) + "]"
-        string += " " + str(self.width) + "/" + str(self.height)
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += str(self.width) + "/" + str(self.height)
         return string
