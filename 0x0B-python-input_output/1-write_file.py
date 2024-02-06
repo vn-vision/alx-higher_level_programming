@@ -5,6 +5,5 @@
 def write_file(filename="", text=""):
     """ create file if it does not exist """
 
-    f  = with open(filename, 'w', encoding='utf-8')
-
-    f.write(text)
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(text)

@@ -3,5 +3,6 @@
 
 
 def read_file(filename=""):
-    f = with open(filename, 'r', encoding='utf-8')
-    f.read()
+    with open(filename, 'r', encoding='utf-8') as f:
+        cp = f.read()
+    return cp
