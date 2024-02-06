@@ -6,5 +6,5 @@ def append_write(filename="", text=""):
     """ Add at text to the end of the file given """
 
     with open(filename, 'a', encoding='utf-8') as f:
-        f.write(text, end="")
+        cp = f.write(text, end="")
         return len(cp)
