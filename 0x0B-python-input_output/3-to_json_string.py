@@ -2,6 +2,7 @@
 """ function that returns the JSON reprentation """
 import json
 
+
 def to_json_string(my_obj):
     """ returns the json format """
 
