@@ -21,3 +21,10 @@ f = open('Workfile', 'w', encoding="utf-8")
 
 using `with` keyword when dealing with file objects, properly closes the file.
 Else, you should call f.close()
+
+# GET A LOOK AT THE JSON DATA
+to encode in json format {"name" : vn-vision},
+    import json
+    json.dumps([])
+to decode json data
+    json.loads()
