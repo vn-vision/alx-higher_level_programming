@@ -29,7 +29,7 @@ try:
 
 except KeyboardInterrupt:
     print("File size: {}".format(tt_size))
-    for code in sorted(status_code_count.keys()):
+    for code in sorted(status_code_counts.keys()):
         if status_code_counts[code] > 0:
-            print("{}: {}".format(code, status_code_count[code]))
+            print("{}: {}".format(code, status_code_counts[code]))
     sys.exit(0)
