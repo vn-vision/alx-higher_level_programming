@@ -52,6 +52,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """ x setter """
         if not isinstance(value, (int, float) or value < 0):
             raise TypeError("x must be >=0")
         self.__x = value
@@ -78,11 +79,39 @@ class Rectangle(Base):
         """ prints in stdout the Rectangle
         with character #
         """
+        for i in range(self.y):
+            print()
 
         for i in range(self.height):
-            print('#' * self.width)
+            print(" " * self.x + '#' * self.width)
 
 
     def __str__(self):
         """ override the string method """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """ assigns an argument to each attribute
+        1st arg: id
+        2nd: width
+        3rd: height
+        4th: x
+        5th: y
+        no-keyword argument, order is important
+        """
+        attr = ['id', 'width', 'height', 'x', 'y']
+        
+        for attr in kwargs:
+            setattr(self, attr, kwargs[attr])
+
+        for attr, value in zip(attr, args):
+            setattr(self, attr, value)
+    
+    def to_dictionary(self):
+        """ convert rectangle attributes to dictionary """
+        rdict = {'x':self.x,
+                 'y':self.y,
+                 'id':self.id,
+                 'height':self.height,
+                 'width':self.width}
+        return (rdict)
