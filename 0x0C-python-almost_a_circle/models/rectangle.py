@@ -53,10 +53,12 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ x setter """
-        if not isinstance(value, (int, float) or value < 0):
-            raise TypeError("x must be >=0")
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
-        
+
     @property
     def y(self):
         """ return Y"""
@@ -65,15 +67,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ asign the value of y """
-        if not isinstance(value, (int, float) or value < 0):
-            raise TypeError("y must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must >= 0")
         self.__y = value
-
 
     def area(self):
         """ calculates the area of the rectangle """
         return (self.width * self.height)
-
 
     def display(self):
         """ prints in stdout the Rectangle
@@ -85,10 +87,10 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + '#' * self.width)
 
-
     def __str__(self):
         """ override the string method """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
         """ assigns an argument to each attribute
@@ -100,18 +102,18 @@ class Rectangle(Base):
         no-keyword argument, order is important
         """
         attr = ['id', 'width', 'height', 'x', 'y']
-        
+
         for attr in kwargs:
             setattr(self, attr, kwargs[attr])
 
         for attr, value in zip(attr, args):
             setattr(self, attr, value)
-    
+
     def to_dictionary(self):
         """ convert rectangle attributes to dictionary """
-        rdict = {'x':self.x,
-                 'y':self.y,
-                 'id':self.id,
-                 'height':self.height,
-                 'width':self.width}
+        rdict = {'x': self.x,
+                 'y': self.y,
+                 'id': self.id,
+                 'height': self.height,
+                 'width': self.width}
         return (rdict)

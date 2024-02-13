@@ -13,6 +13,53 @@ class AirbnbprepTest(unittest.TestCase):
     """
 
     # starting base class
+    def test_base_auto_id(self):
+        """ test the base id """
+        base1 = Base()
+        base2 = Base()
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 2)
+
+    def test_base_auto_id_increment(self):
+        """ id increment """
+        base1 = Base()
+        base2 = Base()
+        self.assertEqual(base2.id, base1.id + 1)
+
+    def test_base_custom_id(self):
+        """ custom """
+        base = Base(89)
+        self.assertEqual(base.id, 89)
+
+    def test_rectangle_valid_arguments(self):
+        """ rectangle valid arguments """
+        rectangle = Rectangle(1, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+
+    def test_rectangle_negative_width(self):
+        """ rectangle with -ve width """
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_rectangle_negative_height(self):
+        """ rectangle with -ve height """
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+    def test_rectangle_zero_width(self):
+        """ rectangle with 0 width"""
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_rectangle_zero_height(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_rectangle_with_position(self):
+        """ positional arguments """
+        rectangle = Rectangle(1, 2, 3)
+        self.assertEqual(rectangle.x, 3)
+
     def test_toJson(self):
         """ test for serialization """
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -63,6 +110,26 @@ class AirbnbprepTest(unittest.TestCase):
         self.assertEqual(square[0].y, 0)
         self.assertEqual(square[0].size, 4)
         os.remove("Square.json")
+
+    def test_square_valid_argument(self):
+        """ valid arguments for square """
+        square = Square(1)
+        self.assertEqual(square.size, 1)
+
+    def test_square_with_position(self):
+        """ positional argument"""
+        square = Square(1, 2)
+        self.assertEqual(square.x, 2)
+
+    def test_square_negative_size(self):
+        """ -ve values for square """
+        with self.assertRaises(ValueError):
+            Square(-1)
+
+    def test_square_zero_size(self):
+        """ when it is zero """
+        with self.assertRaises(ValueError):
+            Square(0)
 
 if __name__ == "__main__":
     unittest.main()
