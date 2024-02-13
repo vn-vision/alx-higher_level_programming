@@ -23,7 +23,7 @@ class Base():
         list_dictionaries is a list of dictionaries
         if list_dictionaries is empy or None return []
         """
-        
+
         if not list_dictionaries:
             return "[]"
 
@@ -41,7 +41,8 @@ class Base():
         if list_objs is None:
             json_obj_str = "[]"
 
-        json_obj_str = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+        json_obj_str = cls.to_json_string([obj.to_dictionary()
+                                           for obj in list_objs])
         filename = cls.__name__ + ".json"
         with open(filename, "w", encoding='utf-8') as f:
             f.write(json_obj_str)

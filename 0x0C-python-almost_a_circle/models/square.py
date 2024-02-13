@@ -16,7 +16,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """ String format for square define """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.height)
 
     @property
     def size(self):
@@ -31,7 +32,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ assigns attributes in the args
-        args is the list of arguments 
+        args is the list of arguments
         1st: id
         2nd: size
         3rd: x
@@ -48,8 +49,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ turns the square attributes to dictionary """
-        sdict = {'id':self.id,
-                 'x':self.x,
-                 'size':self.size,
-                 'y':self.y}
+        sdict = {'id': self.id,
+                 'x': self.x,
+                 'size': self.size,
+                 'y': self.y}
         return sdict
