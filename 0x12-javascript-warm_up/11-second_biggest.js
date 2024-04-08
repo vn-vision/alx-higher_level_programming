@@ -1,13 +1,14 @@
 #!/usr/bin/node
-let big = 0;
 const len = process.argv.slice(2);
 
-if (len && len > 1) {
 // convert arguments to numbers
-  const numbers = len.map(Number);
+const numbers = len.map(Number);
 
+let big;
+if (numbers.length < 2) {
+  big = 0;
+} else {
   numbers.sort((a, b) => a - b);
-
   big = numbers[numbers.length - 2];
 }
 console.log(big);
