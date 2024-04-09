@@ -4,9 +4,6 @@
 // print - prints the rectangle
 
 class Rectangle {
-  width;
-  height;
-  row;
 
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -17,11 +14,11 @@ class Rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      this.row = '';
+      let row = '';
       for (let j = 0; j < this.width; j++) {
-        this.row += 'X';
+        row += 'X';
       }
-      console.log(this.row);
+      console.log(row);
     }
   }
 }
