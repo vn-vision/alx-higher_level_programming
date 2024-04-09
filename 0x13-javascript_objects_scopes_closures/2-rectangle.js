@@ -6,7 +6,6 @@
 // if height or width <= 0 , create empty object
 
 class Rectangle {
-
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
