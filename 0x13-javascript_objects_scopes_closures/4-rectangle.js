@@ -20,16 +20,16 @@ class Rectangle {
   }
 
   rotate () {
-      // Swap width and height
-      const temp = this.width;
-      this.width = this.height;
-      this.height = temp;
-  }  
+    // Swap width and height
+    const temp = this.width;
+    this.width = this.height;
+    this.height = temp;
+  }
 
   double () {
-      // Double the width and height
-      this.width *= 2;
-      this.height *= 2;
+    // Double the width and height
+    this.width *= 2;
+    this.height *= 2;
   }
 }
 
