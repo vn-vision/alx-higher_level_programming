@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # connecting MySQL database
-import MySQLdbi
+import MySQLdb
 import sys
 
 n = len(sys.argv)
