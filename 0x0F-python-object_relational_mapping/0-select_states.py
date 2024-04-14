@@ -27,7 +27,7 @@ if __name__ == "__main__":
         # enironments through the same connection to db
 
         cur = db.cursor()
-        cur.execute("SELECT * FROM states")
+        cur.execute("SELECT * FROM states ORDER BY id")
 
         res = cur.fetchall()
 
