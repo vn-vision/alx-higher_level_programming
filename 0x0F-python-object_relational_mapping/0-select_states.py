@@ -3,39 +3,41 @@
 import MySQLdb
 import sys
 
-n = len(sys.argv)
 
-if n != 4:
-    print("<usage: file.py username, password, database name")
-    sys.exit(1)
+if __name__ == "__main__":
+    n = len(sys.argv)
 
-USERNAME = sys.argv[1]
-PASS = sys.argv[2]
-MY_DB = sys.argv[3]
-MY_HOST = "localhost"
+    if n != 4:
+        print("<usage: file.py username, password, database name")
+        sys.exit(1)
 
-'''
-connecting to the database on port 3306 with the provide credentials
-as well as the database to interact with
-'''
-try:
-    db = MySQLdb.connect(host=MY_HOST, port=3306,
-                         user=USERNAME, passwd=PASS, db=MY_DB)
+    USERNAME = sys.argv[1]
+    PASS = sys.argv[2]
+    MY_DB = sys.argv[3]
+    MY_HOST = "localhost"
 
-    # get the cursor: givrs ability to have multiple separate working
-    # enironments through the same connection to db
+    '''
+    connecting to the database on port 3306 with the provide credentials
+    as well as the database to interact with
+    '''
+    try:
+        db = MySQLdb.connect(host=MY_HOST, port=3306,
+                             user=USERNAME, passwd=PASS, db=MY_DB)
 
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id")
+        # get the cursor: givrs ability to have multiple separate working
+        # enironments through the same connection to db
 
-    res = cur.fetchall()
+        cur = db.cursor()
+        cur.execute("SELECT * FROM states ORDER BY id")
 
-    for x in res:
-        print(x)
+        res = cur.fetchall()
 
-    cur.close()
-    db.close()
+        for x in res:
+            print(x)
 
-except MySQLdb.Error as e:
-    print("Error connecting to MySQL BD: {}".format(e))
-    sys.exit(1)
+        cur.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print("Error connecting to MySQL BD: {}".format(e))
+        sys.exit(1)
