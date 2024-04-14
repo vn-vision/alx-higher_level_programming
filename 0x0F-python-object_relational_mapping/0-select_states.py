@@ -20,24 +20,19 @@ if __name__ == "__main__":
     connecting to the database on port 3306 with the provide credentials
     as well as the database to interact with
     '''
-    try:
-        db = MySQLdb.connect(host=MY_HOST, port=3306,
+     db = MySQLdb.connect(host=MY_HOST, port=3306,
                              user=USERNAME, passwd=PASS, db=MY_DB)
 
-        # get the cursor: givrs ability to have multiple separate working
-        # enironments through the same connection to db
+    # get the cursor: givrs ability to have multiple separate working
+    # enironments through the same connection to db
 
-        cur = db.cursor()
-        cur.execute("SELECT * FROM states ORDER BY id")
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id")
 
-        res = cur.fetchall()
+    res = cur.fetchall()
 
-        for x in res:
-            print(x)
+    for x in res:
+        print(x)
 
-        cur.close()
-        db.close()
-
-    except MySQLdb.Error as e:
-        print("Error connecting to MySQL BD: {}".format(e))
-        sys.exit(1)
+    cur.close()
+    db.close()
