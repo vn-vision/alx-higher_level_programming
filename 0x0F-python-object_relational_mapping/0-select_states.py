@@ -21,7 +21,8 @@ if __name__ == "__main__":
     as well as the database to interact with
     '''
     try:
-        db = MySQLdb.connect(host=MY_HOST, port=3306, user=USERNAME, passwd=PASS, db=MY_DB)
+        db = MySQLdb.connect(host=MY_HOST, port=3306,
+                             user=USERNAME, passwd=PASS, db=MY_DB)
 
         # get the cursor: givrs ability to have multiple separate working
         # enironments through the same connection to db
