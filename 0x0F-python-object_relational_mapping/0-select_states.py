@@ -21,14 +21,14 @@ if __name__ == "__main__":
     as well as the database to interact with
     '''
     try:
-        db = MySQLdb.connect(host=MY_HOST, port=3306,
-                             user=USERNAME, passwd=PASS, db=MY_DB)
+        db = MySQLdb.connect(host=MY_HOST,
+                             user=USERNAME, passwd=PASS, db=MY_DB, port=3306)
 
         # get the cursor: givrs ability to have multiple separate working
         # enironments through the same connection to db
 
         cur = db.cursor()
-        cur.execute("SELECT * FROM states ORDER BY id")
+        cur.execute("SELECT * FROM states")
 
         res = cur.fetchall()
 
