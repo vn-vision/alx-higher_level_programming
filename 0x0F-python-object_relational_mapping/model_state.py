@@ -18,7 +18,7 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False, autogincrement=True)
     name = Column(String(128), nullable=False)
 
-
+'''
 user = sys.argv[1]
 passwd = sys.argv[2]
 db = sys.argv[3]
@@ -27,3 +27,4 @@ db_url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
             user, passwd, db)
 engine = create_engine(db_url)
 Base.metadata.create_all(engine)
+'''
