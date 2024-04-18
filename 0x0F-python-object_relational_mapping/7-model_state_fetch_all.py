@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 import sys
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     user = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
@@ -17,8 +17,7 @@ if __name__ = "__main__":
                            .format(user, passwd, db))
 
     Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = sessionmaker(bind=engine)
 
     for instance in session.query(State).order_by(State.id):
         print(instance.id, ": ", instance.name)
