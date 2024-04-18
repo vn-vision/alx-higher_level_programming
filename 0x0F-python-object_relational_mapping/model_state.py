@@ -19,10 +19,10 @@ class State(Base):
     __tablename__ = 'states'
 
     # create a class attribute for the table states
-    id = Column(Integer, primary_key=True, nullable=False, autogincrement=True)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-
+'''
 user = sys.argv[1]
 passwd = sys.argv[2]
 db = sys.argv[3]
@@ -30,4 +30,4 @@ db = sys.argv[3]
 db_url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
             user, passwd, db)
 engine = create_engine(db_url)
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)'''
