@@ -8,10 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Integer, create_engine
 
 Base = declarative_base()
-engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                       pool_pre_ping=True)
-conn = engine.connect()
+
 
 class State(Base):
     # class state that inherits from Base
@@ -21,4 +18,12 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False, autogincrement=True)
     name = Column(String(128), nullable=False)
 
-    Base.metadata.create_all(engine)
+
+user = sys.argv[1]
+passwd = sys.argv[2]
+db = sys.argv[3]
+
+db_url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+            user, passwd, db)
+engine = create_engine(db_url)
+Base.metadata.create_all(engine)
