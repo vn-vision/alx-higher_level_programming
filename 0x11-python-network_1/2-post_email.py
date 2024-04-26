@@ -7,7 +7,8 @@ urllib.parse.urlencode - standard way of passing POST data
 data.encode - type of encoding that you want on the data to send
 '''
 
-import urllib
+import urllib.request
+import urllib.parse
 import sys
 
 if __name__ == "__main__":
