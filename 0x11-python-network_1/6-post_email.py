@@ -13,4 +13,4 @@ if __name__ == "__main__":
 
     requests.post(url, data={"email": email})
     r = requests.get(url)
-    print(r.text)
+    print(r.content)
