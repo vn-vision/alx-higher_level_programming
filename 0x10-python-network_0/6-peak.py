@@ -1,6 +1,8 @@
 
 #!/usr/bin/python3
-# find the peak in a list of unsorted numbers
+'''
+find the peak in a list of unsorted numbers
+'''
 
 
 def find_peak(list_of_integers):
