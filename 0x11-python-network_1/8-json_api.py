@@ -23,6 +23,6 @@ if __name__ == "__main__":
         if Data:
             print("[{}] {}".format(Data['id'], Data['name']))
         else:
-            print("Not result")
+            print("No result")
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
