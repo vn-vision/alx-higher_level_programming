@@ -21,7 +21,7 @@ if __name__ == "__main__":
         Data = req.json()
 
         if Data:
-            print("[{}] {}".format(Data['id'], Data['name']))
+            print("[{}] {}".format(Data.get('id'), Data.get('name')))
         else:
             print("No result")
     except requests.exceptions.JSONDecodeError:

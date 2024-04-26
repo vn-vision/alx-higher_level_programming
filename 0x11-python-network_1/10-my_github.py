@@ -20,6 +20,6 @@ if __name__ == "__main__":
 
     # check for status code 200
     if req.status_code == 200:
-        print(req.json()['id'])
+        print(req.json().get('id'))
     else:
         print("Failed to authenticate: ", req.status_code)
