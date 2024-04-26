@@ -1,0 +1,2 @@
+complexity is:
+0(n)
