@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-'''
+"""
 sends a POST request to passed URL with email
 displays the body response
-'''
+"""
 
 import sys
 import requests
