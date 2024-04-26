@@ -16,12 +16,12 @@ if __name__ == "__main__":
         val = ""
 
     payload = {"q": val}
-    req = requests.post(url, params=payload)
+    req = requests.post(url, data=payload)
     try:
         Data = req.json()
 
         if Data:
-            print("[{}] {}".format(Data.id, Data.name))
+            print("[{}] {}".format(Data['id'], Data['name']))
         else:
             print("Not result")
     except requests.exceptions.JSONDecodeError:
