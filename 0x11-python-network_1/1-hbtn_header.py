@@ -5,7 +5,7 @@ found in header of the response
 make sure to print the content inside the with block
 it ensures the _id is the expected ID
 '''
-import urllib
+import urllib.request
 import sys
 
 if __name__ == "__main__":
